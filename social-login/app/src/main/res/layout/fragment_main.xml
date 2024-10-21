@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ScrollView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:maxHeight="300dp"
+                    android:fillViewport="true"
+                    android:id="@+id/sv_main_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_main_content"
+                      android:layout_marginTop="20dp"
+                      android:layout_marginHorizontal="20dp"/>
+        </ScrollView>
+
+        <EditText android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:hint="힌트"
+                  android:layout_marginHorizontal="20dp"
+                  app:layout_constraintTop_toBottomOf="@id/sv_main_content"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintBottom_toTopOf="@id/sv_main"
+                  android:id="@+id/et_main_input" />
+
+        <ScrollView android:layout_width="0dp" android:layout_height="0dp"
+                    android:fillViewport="true"
+                    android:id="@+id/sv_main"
+                    app:layout_constraintTop_toBottomOf="@id/et_main_input"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/ll_main_container"
+                          android:paddingHorizontal="20dp"
+                          android:clipToPadding="true"
+                          android:orientation="vertical">
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="sign out"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_signout" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Get a user's profile"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_profile" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Get a user's provider-specific profile information"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_specific_profile" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Update a user's profile\n(displayName,photoUri)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_update_profile" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Set a user's email address\n(email)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_set_email" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Send a user a verification email"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_send_verification_email" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Set a user's password\n(password)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_set_pwd" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Send a password reset email\n(email)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_send_reset" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Delete a user"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_delete_user" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Re-authenticate a user\n(email,password)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_reauthenticate" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Create a password-based account\n(email,password)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_create_pwd_account" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Sign in a user with an email address and password\n(email,password)"
+                        android:layout_marginVertical="10dp"
+                        android:id="@+id/btn_main_signin_pwd_account" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Send an authentication link to the user's email address"
+                        android:layout_marginVertical="10dp"
+                        android:visibility="invisible"
+                        android:id="@+id/btn_main_send_auth_link" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Verify link and sign in"
+                        android:layout_marginVertical="10dp"
+                        android:visibility="invisible"
+                        android:id="@+id/btn_main_verify_link" />
+
+                <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Linking/re-authentication with email link"
+                        android:layout_marginVertical="10dp"
+                        android:visibility="invisible"
+                        android:id="@+id/btn_main_reauth_link" />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
