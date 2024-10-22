@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation_main" app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment" android:name="com.tenutz.firestorecrud.ui.login.LoginFragment"
+              android:label="LoginFragment"
+              tools:layout="@layout/fragment_login">
+
+        <deepLink
+                app:uri="firestorecrudnaverauthcallbackscheme://authorities/{authority}?firebaseToken={firebaseToken}&amp;name={name}&amp;profileImage={profileImage}" />
+        <action android:id="@+id/action_loginFragment_to_profileFragment"
+                app:popUpTo="@id/loginFragment"
+                app:popUpToInclusive="true"
+                app:destination="@id/profileFragment"/>
+    </fragment>
+    <fragment android:id="@+id/profileFragment" android:name="com.tenutz.firestorecrud.ui.profile.ProfileFragment"
+              tools:layout="@layout/fragment_profile"
+              android:label="ProfileFragment">
+
+
+        <action android:id="@+id/action_profileFragment_to_newPostFragment" app:destination="@id/newPostFragment"/>
+        <action android:id="@+id/action_profileFragment_to_postsFragment" app:destination="@id/postsFragment"/>
+    </fragment>
+    <fragment android:id="@+id/newPostFragment" android:name="com.tenutz.firestorecrud.ui.post.NewPostFragment"
+              tools:layout="@layout/fragment_new_post"
+              android:label="NewPostFragment"/>
+    <fragment android:id="@+id/postsFragment" android:name="com.tenutz.firestorecrud.ui.post.PostsFragment"
+              tools:layout="@layout/fragment_posts"
+              android:label="PostsFragment">
+        <action android:id="@+id/action_postsFragment_to_postFragment" app:destination="@id/postFragment"/>
+    </fragment>
+    <fragment android:id="@+id/postFragment" android:name="com.tenutz.firestorecrud.ui.post.PostFragment"
+              tools:layout="@layout/fragment_post"
+              android:label="PostFragment">
+
+        <argument android:name="docId" app:argType="string" />
+        <argument android:name="authorUid" app:argType="string" />
+    </fragment>
+</navigation>

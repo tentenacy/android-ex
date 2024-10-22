@@ -1,0 +1,179 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.tenutz.firestorecrud'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.tenutz.firestorecrud"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        dataBinding true
+        buildConfig true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    /**
+     * **********************************************************
+     *              Core
+     * **********************************************************
+     */
+    implementation libs.androidx.core.ktx
+
+    /**
+     * **********************************************************
+     *              UI
+     * **********************************************************
+     */
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core.splashscreen
+
+    /**
+     * **********************************************************
+     *              Firebase
+     * **********************************************************
+     */
+    implementation platform(libs.firebase.bom)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
+    implementation(libs.firebase.auth)
+    implementation libs.firebase.analytics
+
+
+    /**
+     * **********************************************************
+     *              Authentication
+     * **********************************************************
+     */
+    implementation libs.oauth //네이버
+
+    implementation libs.v2.all //카카오
+    implementation libs.v2.user
+
+    implementation libs.googleid //구글 & 페이스북
+    implementation libs.facebook.android.sdk
+
+    implementation libs.androidx.credentials //Credentials API(사용자 인증 정보)
+    implementation libs.androidx.credentials.play.services.auth
+
+    implementation libs.gms.play.services.auth //Google Service Auth
+
+    /**
+     * **********************************************************
+     *              Reactive Programming
+     * **********************************************************
+     */
+    implementation libs.kotlinx.coroutines.android //Coroutine
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.reactive
+    implementation libs.kotlinx.coroutines.rx3
+
+    implementation libs.rxandroid //Rx
+    implementation libs.rxjava
+    implementation libs.rxkotlin
+
+    /**
+     * **********************************************************
+     *              Jetpack Libs
+     * **********************************************************
+     */
+    implementation libs.androidx.navigation.fragment.ktx //Navigation
+    implementation libs.androidx.navigation.ui.ktx
+
+    /*implementation libs.androidx.paging.runtime.ktx //Paging3
+    implementation libs.androidx.paging.rxjava3
+
+    implementation libs.androidx.room.runtime //Room
+    implementation libs.androidx.room.ktx
+    implementation libs.androidx.room.rxjava3
+    implementation libs.androidx.room.paging*/
+
+    /**
+     * **********************************************************
+     *              Network
+     * **********************************************************
+     */
+    implementation libs.retrofit // Retrofit
+    implementation libs.adapter.rxjava3
+    implementation libs.converter.gson
+    implementation libs.converter.scalars
+
+    implementation libs.okhttp // OkHttp3
+    implementation libs.logging.interceptor
+
+    /**
+     * **********************************************************
+     *              Converter(JSON Serialization & Deserialization)
+     * **********************************************************
+     */
+    implementation libs.converter.moshi
+
+    /**
+     * **********************************************************
+     *              SharedPreference
+     * **********************************************************
+     */
+    implementation libs.kotpref
+
+    /**
+     * **********************************************************
+     *              Dependency Injection
+     * **********************************************************
+     */
+    implementation libs.hilt.android //Hilt
+    kapt libs.hilt.compiler
+
+    /**
+     * **********************************************************
+     *              Etc
+     * **********************************************************
+     */
+    coreLibraryDesugaring libs.desugar.jdk.libs //De-sugaring
+
+    implementation libs.glide //Glide
+    implementation libs.compiler
+
+    implementation libs.android.image.picker //Image Picker
+
+    /**
+     * **********************************************************
+     *              Test
+     * **********************************************************
+     */
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

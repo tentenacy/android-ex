@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+                                                       android:id="@+id/cl_login_container"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/btn_login_naverlogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_naver"
+                android:layout_marginHorizontal="40dp"
+                android:padding="20dp"
+                android:gravity="start|center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_login_facebooklogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                       android:src="@drawable/ico_naver"
+                       android:layout_marginEnd="10dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="네이버로 시작하기"
+                      android:textStyle="bold"
+                      android:textColor="#ffffff"
+                      android:includeFontPadding="false"
+                      android:layout_marginStart="10dp"
+                      android:id="@+id/txt_login_naver" />
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:id="@+id/btn_login_kakaologin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_kakao"
+                android:layout_marginHorizontal="40dp"
+                android:padding="20dp"
+                android:gravity="start|center"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@id/btn_login_googlelogin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                       android:src="@drawable/ico_kakao"
+                       android:layout_marginEnd="10dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="카카오톡으로 시작하기"
+                      android:textStyle="bold"
+                      android:textColor="#282828"
+                      android:includeFontPadding="false"
+                      android:layout_marginStart="10dp"
+                      android:id="@+id/txt_login_kakao" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/btn_login_googlelogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_google"
+                android:layout_marginHorizontal="40dp"
+                android:padding="20dp"
+                android:gravity="start|center"
+                app:layout_constraintBottom_toTopOf="@id/btn_login_facebooklogin"
+                app:layout_constraintTop_toBottomOf="@id/btn_login_kakaologin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                       android:src="@drawable/ico_google"
+                       android:layout_marginEnd="10dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="구글로 시작하기"
+                      android:textStyle="bold"
+                      android:textColor="#282828"
+                      android:includeFontPadding="false"
+                      android:layout_marginStart="10dp"
+                      android:id="@+id/txt_login_google" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/btn_login_facebooklogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_facebook"
+                android:layout_marginHorizontal="40dp"
+                android:padding="20dp"
+                android:gravity="start|center"
+                app:layout_constraintBottom_toTopOf="@id/btn_login_naverlogin"
+                app:layout_constraintTop_toBottomOf="@id/btn_login_googlelogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                       android:src="@drawable/ico_facebook"
+                       android:layout_marginEnd="10dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="페이스북으로 시작하기"
+                      android:textStyle="bold"
+                      android:textColor="#ffffff"
+                      android:includeFontPadding="false"
+                      android:layout_marginStart="10dp"
+                      android:id="@+id/txt_login_facebook" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
